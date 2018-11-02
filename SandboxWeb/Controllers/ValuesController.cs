@@ -11,9 +11,9 @@ namespace SandboxWeb.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
-        private readonly ValuesService valuesService;
+        private readonly IValuesService valuesService;
 
-        public ValuesController(ValuesService valuesService)
+        public ValuesController(IValuesService valuesService)
         {
             this.valuesService = valuesService;
         }

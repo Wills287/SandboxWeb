@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace SandboxWeb.Services
 {
-    public class ValuesService
+    public class ValuesService : IValuesService
     {
         public IList<string> SelectValues()
         {

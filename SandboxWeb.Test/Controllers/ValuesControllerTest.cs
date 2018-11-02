@@ -13,13 +13,13 @@ namespace SandboxWeb.Test.Controllers
 {
     public class ValuesControllerTest
     {
-        private readonly Mock<ValuesService> valuesService;
+        private readonly Mock<IValuesService> valuesService;
 
         private readonly ValuesController valuesController;
 
         public ValuesControllerTest()
         {
-            valuesService = new Mock<ValuesService>();
+            valuesService = new Mock<IValuesService>();
 
             valuesService.Setup(s => s.SelectValues())
                 .Returns(new List<string>()
