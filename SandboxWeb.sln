@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SandboxWeb", "SandboxWeb\SandboxWeb.csproj", "{464076A5-28C6-4FA4-85A9-1EEDB06CD4F4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SandboxWeb.Test", "SandboxWeb.Test\SandboxWeb.Test.csproj", "{4F54AF40-17BE-400A-B741-2C9212BF2F70}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{464076A5-28C6-4FA4-85A9-1EEDB06CD4F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{464076A5-28C6-4FA4-85A9-1EEDB06CD4F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{464076A5-28C6-4FA4-85A9-1EEDB06CD4F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F54AF40-17BE-400A-B741-2C9212BF2F70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F54AF40-17BE-400A-B741-2C9212BF2F70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F54AF40-17BE-400A-B741-2C9212BF2F70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F54AF40-17BE-400A-B741-2C9212BF2F70}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
