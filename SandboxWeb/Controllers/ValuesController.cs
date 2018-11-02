@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using SandboxWeb.Services;
 
 namespace SandboxWeb.Controllers
 {
@@ -10,11 +11,18 @@ namespace SandboxWeb.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        private readonly ValuesService valuesService;
+
+        public ValuesController(ValuesService valuesService)
+        {
+            this.valuesService = valuesService;
+        }
+
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public IActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            return Ok(valuesService.SelectValues());
         }
 
         // GET api/values/5

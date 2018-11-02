@@ -1,7 +1,11 @@
-﻿using SandboxWeb.Controllers;
+﻿using Microsoft.AspNetCore.Mvc;
+using Moq;
+using SandboxWeb.Controllers;
+using SandboxWeb.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using Xunit;
 
@@ -9,19 +13,34 @@ namespace SandboxWeb.Test.Controllers
 {
     public class ValuesControllerTest
     {
+        private readonly Mock<ValuesService> valuesService;
+
         private readonly ValuesController valuesController;
 
         public ValuesControllerTest()
         {
-            valuesController = new ValuesController();
+            valuesService = new Mock<ValuesService>();
+
+            valuesService.Setup(s => s.SelectValues())
+                .Returns(new List<string>()
+                {
+                    "value1",
+                    "value2"
+                });
+
+            valuesController = new ValuesController(valuesService.Object);
         }
 
         [Fact]
         public void ShouldGetList()
         {
             var result = valuesController.Get();
+            var okResult = result as OkObjectResult;
 
-            var values = result.Value;
+            Assert.NotNull(okResult);
+            Assert.Equal(200, okResult.StatusCode);
+
+            var values = okResult.Value as IList<string>;
 
             Assert.Contains(values, v => v.Equals("value1"));
             Assert.Contains(values, v => v.Equals("value2"));
